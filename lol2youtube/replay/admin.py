@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from replay.models import PentakillReplay
+
+
+@admin.register(PentakillReplay)
+class PentakillReplayAdmin(admin.ModelAdmin):
+    list_display = (
+        'created',
+        'champion_name',
+    )
