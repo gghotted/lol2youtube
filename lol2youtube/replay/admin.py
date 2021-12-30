@@ -7,5 +7,5 @@ from replay.models import PentakillReplay
 class PentakillReplayAdmin(admin.ModelAdmin):
     list_display = (
         'created',
-        'champion_name',
+        'champion',
     )

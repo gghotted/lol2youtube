@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class Champion(models.Model):
+    eng_name = models.CharField(max_length=64)
+    kor_name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.eng_name
+
+
 class Replay(models.Model):
     class Meta:
         abstract = True
@@ -18,8 +26,7 @@ class PentakillReplay(Replay):
 
     upload_channel = models.CharField(max_length=64)
 
-    champion_name = models.CharField(max_length=64)
-    champion_kor_name = models.CharField(max_length=64)
+    champion = models.ForeignKey(Champion, models.DO_NOTHING, related_name='replays')
     kill_duration = models.PositiveIntegerField()
     ultimate_hit_count = models.PositiveIntegerField()
 
