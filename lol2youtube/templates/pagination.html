@@ -1,0 +1,24 @@
+{% load i18n %}
+<ul class="pagination justify-content-center">
+    <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+        <a class="page-link" href="?{{ page_obj.previous_page_number.querystring }}">이전</a>
+    </li>
+    {% for page in page_obj.pages %}
+        {% if page %}
+            {% ifequal page page_obj.number %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="?{{ page.querystring }}">{{page}}</a>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?{{ page.querystring }}">{{page}}</a>
+                </li>
+            {% endifequal %}
+        {% else %}
+            <span class="text-white mr-2 ml-2 font-weight-bold"> ... </span>
+        {% endif %}
+    {% endfor %}
+    <li class="page-item {% if not page_obj.has_next %} disabled {% endif %}">
+        <a class="page-link" href="?{{ page_obj.next_page_number.querystring }}">다음</a>
+    </li>
+</ul>

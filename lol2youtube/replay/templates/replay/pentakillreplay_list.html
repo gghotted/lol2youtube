@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script>
+    $( function() {
+        var availableTags = {{champion_kor_list | safe}};
+        $( "#id_name" ).autocomplete({
+            source: availableTags
+        });
+    });
+</script>
+<form class='w-75 min-vw-100 mx-auto p-3'>
+{% for field in form.visible_fields %}
+    <div class="input-group mb-3">
+        <span class="input-group-text">{{field.label}}</span>
+        {{field}}
+    </div>
+{% endfor %}
+    <button type="submit" class="btn btn-primary mx-auto d-block">적용</button>
+</form>
+<p class="text-center text-white font-weight-bold">
+    {{total_length}}개의 펜타킬이 검색됨
+</p>
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
+    {% for obj in object_list %}
+        <div class="col">
+            <div class="card-body text-center">
+                    <iframe width="310" height="310" style="border-radius: 10px; border: 2px solid #333333;"
+                            src="https://www.youtube.com/embed/{{obj.video_id}}"
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                    <p class="mb-3 text-info">
+                        {{obj.game_creation|date:'Y-m-d'}}<br>
+                        {{obj.champion.kor_name}}<br>
+                        걸린 시간: {{obj.readable_duration}}
+                    </p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% include 'pagination.html' %}
+{% endblock %}

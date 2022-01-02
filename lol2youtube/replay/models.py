@@ -18,6 +18,10 @@ class Replay(models.Model):
 
     url = models.URLField()
 
+    @property
+    def video_id(self):
+        return self.url.split('/')[-1]
+
 
 class PentakillReplay(Replay):
     match_id = models.CharField(max_length=32)
@@ -30,3 +34,6 @@ class PentakillReplay(Replay):
     kill_duration = models.PositiveIntegerField()
     ultimate_hit_count = models.PositiveIntegerField()
 
+    @property
+    def readable_duration(self):
+        return str(round(self.kill_duration / 1000, 1)) + '초'
