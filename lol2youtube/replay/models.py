@@ -32,6 +32,7 @@ class PentakillReplay(Replay):
 
     champion = models.ForeignKey(Champion, models.DO_NOTHING, related_name='replays')
     kill_duration = models.PositiveIntegerField()
+    damage_contribution = models.FloatField(default=0)
     ultimate_hit_count = models.PositiveIntegerField()
 
     @property

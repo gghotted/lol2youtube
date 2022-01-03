@@ -24,6 +24,7 @@ class PentakillReplaySerializer(serializers.ModelSerializer):
             'game_version',
             'upload_channel',
             'kill_duration',
+            'damage_contribution',
             'ultimate_hit_count',
             'champion',
         )
