@@ -10,3 +10,4 @@ media-old
 **/staticfiles
 pg
 **/*.log
+ssl

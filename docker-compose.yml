@@ -5,14 +5,17 @@ services:
         container_name: nginx2
         ports:
             - "80:80"
+            - "443:443"
         environment:
             NGINX_ENVSUBST_TEMPLATE_SUFFIX: ".conf"
             SERVER_NAME: ${NGINX_SERVER_NAME}
         volumes:
             - ./nginx:/etc/nginx/conf.d/
             - ./lol2youtube/staticfiles:/staticfiles
+            - ./ssl:/ssl/
         depends_on:
             - web
+        command: [nginx-debug, '-g', 'daemon off;']
 
     web:
         build:
