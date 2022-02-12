@@ -1,10 +1,8 @@
 # LOL2Youtube
 
-
-
 ## 설명
 
-롤이라는 게임의 재미있는 장면을 녹화하여 youtube에 업로드하는 프로젝트입니다.
+롤의 재밌는 장면을 수집, 녹화, 업로드하는 프로세스를 자동화하는 프로젝트입니다.
 
 ## 사용 기술
 
@@ -15,6 +13,23 @@
 - html, css, django-template-engine
 - gcp
 - 반디캠
+
+## 자체사이트
+
+https://lol2youtube.com
+
+## 모든 유튜브 채널
+
+1. [Pentakill Collector2](https://www.youtube.com/channel/UCs25KVMmHqCpkMqcecEIRjQ)
+2. [Pentakill Collector3](https://www.youtube.com/channel/UCmhM703LbZ1r86r8CKsyEkA)
+3. [Pentakill Collector4](https://www.youtube.com/channel/UCOt3LsX2wMC3JUTV_IPzt5w)
+4. [Pentakill Collector5](https://www.youtube.com/channel/UCk7tNq10DyUmboClA6t6q_A)
+
+## 모든 저장소
+
+1. [api 크롤링 서버](https://github.com/gghotted/lol2youtube-server)
+2. [로컬 pc](https://github.com/gghotted/lol2youtube-client)
+3. [자체 사이트 서버](https://github.com/gghotted/lol2youtube)(이 저장소)
 
 ## 시스템 구성 및 프로세스
 
@@ -45,19 +60,6 @@ url과 녹화 및 펜타킬 정보를 자체 사이트 서버에 전달하여 �
 <img src="./docs_images\l5.png" style="zoom:67%;" />
 
 유저는 유튜브 shorts 추천과, 자체 사이트를 통해 영상을 볼 수 있습니다.
-
-## 모든 저장소
-
-1. [api 크롤링 서버](https://github.com/gghotted/lol2youtube-server)
-2. [로컬 pc](https://github.com/gghotted/lol2youtube-client)
-3. [자체 사이트 서버](https://github.com/gghotted/lol2youtube)(이 저장소)
-
-## 모든 채널
-
-1. [Pentakill Collector2](https://www.youtube.com/channel/UCs25KVMmHqCpkMqcecEIRjQ)
-2. [Pentakill Collector3](https://www.youtube.com/channel/UCmhM703LbZ1r86r8CKsyEkA)
-3. [Pentakill Collector4](https://www.youtube.com/channel/UCOt3LsX2wMC3JUTV_IPzt5w)
-4. [Pentakill Collector5](https://www.youtube.com/channel/UCk7tNq10DyUmboClA6t6q_A)
 
 ## 운영 및 수익화
 
